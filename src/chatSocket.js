@@ -1,10 +1,4 @@
 const {Server} = require("socket.io");
-const http = require("http");
-const cors = require("cors");
-
-// const chat = {};
-
-
 
 const setCorsSocketIo = (server)=>{
     return new Server(server,{
@@ -41,9 +35,5 @@ const chatConnection = (io)=>{
 const Chat = (server) =>{
    return chatConnection( setCorsSocketIo(server))
 }
-
-
-// chat.setCorsSocketIo = setCorsSocketIo;
-// chat.chatConnection = chatConnection;
 
 module.exports = Chat;
